@@ -1,7 +1,7 @@
 package clases;
 
 public class Empleado {
-	
+
 	private int id;
 	private String nombre;
 	private int antiguedad;
@@ -12,11 +12,10 @@ public class Empleado {
 		super();
 	}
 
-	public Empleado(int id, String nombre, int antiguedad, int sueldo, String cargo) {
+	public Empleado(int id, String nombre, int antiguedad, String cargo) {
 		this.id = id;
 		this.nombre = nombre;
 		this.antiguedad = antiguedad;
-		this.sueldo = sueldo;
 		this.cargo = cargo;
 	}
 	
@@ -56,7 +55,7 @@ public class Empleado {
 	
 	@Override
 	public String toString() {
-		return "Empleado [id=" + id + ", nombre=" + nombre + ", antigüedad=" + antiguedad + ", sueldo=" + sueldo + ", cargo=" + cargo + "]";
+		return nombre;
 	}
 	
 	public int calcularSueldo() {
