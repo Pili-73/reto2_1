@@ -4,6 +4,7 @@ public class Empleado {
 	
 	private int id;
 	private String nombre;
+	private int antiguedad;
 	private int sueldo;
 	private String cargo;
 	
@@ -11,9 +12,10 @@ public class Empleado {
 		super();
 	}
 
-	public Empleado(int id, String nombre, int sueldo, String cargo) {
+	public Empleado(int id, String nombre, int antiguedad, int sueldo, String cargo) {
 		this.id = id;
 		this.nombre = nombre;
+		this.antiguedad = antiguedad;
 		this.sueldo = sueldo;
 		this.cargo = cargo;
 	}
@@ -30,6 +32,15 @@ public class Empleado {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public int getAntiguedad() {
+		return antiguedad;
+	}
+
+	public void setAntiguedad(int antiguedad) {
+		this.antiguedad = antiguedad;
+	}
+
 	public int getSueldo() {
 		return sueldo;
 	}
@@ -45,8 +56,16 @@ public class Empleado {
 	
 	@Override
 	public String toString() {
-		return "Empleado [id=" + id + ", nombre=" + nombre + ", sueldo=" + sueldo + ", cargo=" + cargo + "]";
+		return "Empleado [id=" + id + ", nombre=" + nombre + ", antigüedad=" + antiguedad + ", sueldo=" + sueldo + ", cargo=" + cargo + "]";
 	}
 	
-	public 
+	public int calcular sueldo() {
+		if (antiguedad < 5) {
+			sueldo = 1000;
+		} else if (antiguedad < 11) {
+			sueldo = 1200;
+		} else {
+			sueldo = 1500;
+		}
+	}
 }
