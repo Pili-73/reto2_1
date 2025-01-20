@@ -4,10 +4,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Tienda {
+
 	private int id;
 	private String nombre;
 	private Empleado gerente;
 	private List<Producto> producto;
+	
 	public int getId() {
 		return id;
 	}
@@ -57,7 +59,13 @@ public class Tienda {
 
 	@Override
 	public String toString() {
-		return "Tienda [id=" + id + ", nombre=" + nombre + ", gerente=" + gerente + ", producto=" + producto + "]";
+		int tamano;
+		if (producto == null) {
+			tamano = 0;
+		} else {
+			tamano = producto.size();
+		}
+		return id + " - " + nombre + " " + gerente + " " + tamano;
 	}
-	
+
 }
