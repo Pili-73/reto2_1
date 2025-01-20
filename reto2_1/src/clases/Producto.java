@@ -32,5 +32,9 @@ public double getPrecio() {
 public void setPrecio(double precio) {
 	this.precio = precio;
 }
+@Override
+public String toString() {
+	return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";
+}
 
 }
