@@ -38,8 +38,10 @@ public class main {
 			}
 		}while(opcion==5);
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
 	}
-
 }
