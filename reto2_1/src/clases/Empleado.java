@@ -47,4 +47,6 @@ public class Empleado {
 	public String toString() {
 		return "Empleado [id=" + id + ", nombre=" + nombre + ", sueldo=" + sueldo + ", cargo=" + cargo + "]";
 	}
+	
+	public 
 }
