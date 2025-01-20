@@ -11,7 +11,7 @@ public class main {
 		int opcion=0;
 		
 		do {
-			System.out.println("1- Ver Tiendas");
+			System.out.println("1- Ver Tiendas a");
 			System.out.println("2- Comprar");
 			System.out.println("3- Mostrar Compras");
 			System.out.println("4- Realizar una queja");
