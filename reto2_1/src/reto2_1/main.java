@@ -1,5 +1,5 @@
 package reto2_1;
-<<<<<<< HEAD
+
 import java.util.Scanner;
 
 import util.Funciones;
@@ -18,14 +18,6 @@ public class main {
 			System.out.println("5- Salir");
 			opcion= Funciones.dimeEntero("Seleccione opción para interactuar:", sc);
 		}while(opcion==5);
-=======
 
-public class main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
 	}
-
 }
