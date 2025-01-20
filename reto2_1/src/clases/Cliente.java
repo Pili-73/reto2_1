@@ -53,18 +53,21 @@ public class Cliente {
 	}
 
 	public void comprarProducto(Tienda tienda, Producto producto) {
-		 compras.put(tienda, producto);
+		List<Producto> lista = new ArrayList<Producto>();
+		lista = compras.get(tienda);
+		lista.add(producto);
+		compras.put(tienda, lista);
 	}
 	
 	public void gastoTotal() {
 		Tienda tienda;
 		Producto valor;
 		double suma = 0;
-		Iterator<Integer> claves = compras.keySet().iterator();
+		Iterator<Tienda> claves = compras.keySet().iterator();
 		while (claves.hasNext()) {
 			tienda = claves.next();
 			valor = compras.get(tienda);
-			suma += valor.precio;
+			suma += ;
 
 		}
 	}
