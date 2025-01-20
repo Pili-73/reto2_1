@@ -7,7 +7,25 @@ public class Cliente {
 	
 	private int id;
 	private String nombre;
-	private Map<Integer, List<Producto>> compras = new HashMap<Integer, List<Producto>>();
+	private Map<Tienda, List<Producto>> compras = new HashMap<Tienda, List<Producto>>();
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Map<Tienda, List<Producto>> getCompras() {
+		return compras;
+	}
+	public void setCompras(Map<Tienda, List<Producto>> compras) {
+		this.compras = compras;
+	}
 
 	
 
