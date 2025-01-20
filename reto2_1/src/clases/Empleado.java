@@ -59,7 +59,8 @@ public class Empleado {
 		return "Empleado [id=" + id + ", nombre=" + nombre + ", antigüedad=" + antiguedad + ", sueldo=" + sueldo + ", cargo=" + cargo + "]";
 	}
 	
-	public int calcular sueldo() {
+	public int calcularSueldo() {
+		int sueldo = 0;
 		if (antiguedad < 5) {
 			sueldo = 1000;
 		} else if (antiguedad < 11) {
@@ -67,5 +68,6 @@ public class Empleado {
 		} else {
 			sueldo = 1500;
 		}
+		return sueldo;
 	}
 }
