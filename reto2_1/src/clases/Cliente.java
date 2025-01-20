@@ -1,16 +1,10 @@
 package clases;
 
-<<<<<<< HEAD
-public class Cliente {
-
-}
-=======
 import java.util.ArrayList;
 import java.util.HashMap;
-<<<<<<< HEAD
-=======
+
 import java.util.Iterator;
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
+
 import java.util.List;
 import java.util.Map;
 
@@ -84,4 +78,3 @@ y lista de compras. La lista de compras será un HashMap donde la clave será la
 productos que se compran en esa tienda. Tendrá un método de comprar producto, que recibirá la tienda y el
 producto a comprar. Y otro método de gasto total que devolverá el importe de todas las compras que haya
 realizado.*/
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
