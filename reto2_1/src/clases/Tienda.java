@@ -51,11 +51,12 @@ public class Tienda {
 		Iterator<Producto> iter = producto.iterator();
 		while (iter.hasNext()) {
 			Producto produc = iter.next();
-			if (produc == prod) {
+			if (produc.equals(prod)) {
 				iter.remove();
 			}
 			
 		}
+		
 	}
 	
 	public void anadirProducto(Producto prod) {
@@ -72,5 +73,7 @@ public class Tienda {
 		}
 		return id + " - " + nombre + " " + gerente + " " + tamano;
 	}
+	
+	
 
 }

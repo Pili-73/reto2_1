@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+
 public class Cliente {
 
 	private int id;
@@ -50,15 +51,26 @@ public class Cliente {
 	}
 
 	public void comprarProducto(Tienda tienda, Producto producto) {
-		List<Producto> lista;
-		if (tienda.getProducto() == null) {
-			lista = new ArrayList<Producto>();
+		Tienda clave;
+		List<Producto> valor;
+		 
+		if (compras.containsKey(tienda)) {
+			Iterator<Tienda> claves = compras.keySet().iterator();
+			while(claves.hasNext()) { 
+				clave = claves.next(); 
+				if (clave == tienda) {
+					valor = compras.get(clave);
+					valor.add(producto);
+					compras.put(tienda, valor);
+				}
+			}
 		} else {
-			lista = tienda.getProducto(); 
+			List<Producto> lista = new ArrayList<Producto>();
+			lista.add(producto);
+			compras.put(tienda, lista);
 		}
-		lista.add(producto);
-		compras.put(tienda, lista);
-		System.out.println(compras);
+		
+		
 	}
 	
 	public void gastoTotal() {

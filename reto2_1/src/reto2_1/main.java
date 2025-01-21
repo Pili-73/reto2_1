@@ -58,7 +58,7 @@ public class main {
 				break;
 			case 4:
 				//realizar queja
-				funcionesP.realizarQueja(tiendas, empleados);
+				realizarQueja(tiendas, empleados);
 				break;
 			case 5:
 				break;
@@ -68,8 +68,6 @@ public class main {
 			}
 		} while (opcion != 5);
 	}
-
-
 
 
 	private static void comprar(Scanner sc, Random r, List<Tienda> tiendas, Cliente cliente) {
@@ -87,8 +85,6 @@ public class main {
 		tienda.venderProducto(producto);
 	}
 
-
-	
 
 	public static void generarEmpleados(List<Empleado> empleados, Random r) {
 		int antiguedad;
@@ -177,6 +173,24 @@ public class main {
 		}
 		cliente.gastoTotal();
 	
+	}
+	
+	public static void realizarQueja(List<Tienda> tiendas, List<Empleado> empleados) {
+		Scanner sc = new Scanner(System.in);
+		Random r = new Random();
+		
+		Tienda tienda = pedirTienda(tiendas, sc);
+		int id_gerente = 0;
+		Empleado nuevo = null;
+		id_gerente = r.nextInt(1,21);
+		for (Empleado empleado : empleados) {
+			if (empleado.getId() == id_gerente) {
+				nuevo = empleado;
+				empleado.setCargo("gerente");
+			}
+		}
+		
+		tienda.setGerente(nuevo);
 	}
 
 }
