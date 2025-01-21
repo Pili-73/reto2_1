@@ -50,23 +50,11 @@ public class main {
 				break;
 			case 2:
 				//comprar
-				Tienda tienda = pedirTienda(tiendas, sc);		
-				
-				//elijo producto
-				Producto producto = null;
-				List<Producto> productos = tienda.getProducto();
-				int nRandom = r.nextInt(1, productos.size() + 1);
-				for (Producto prod : productos) {
-					if (prod.getId() == nRandom) {
-						producto = prod;
-					}
-				}
-				cliente.comprarProducto(tienda, producto);		//NO ELIMINA EL PRODUCTO DE LA LISTA***********
-				tienda.venderProducto(producto);				//HACE COSAS RARAS***************
+				comprar(sc, r, tiendas, cliente);
 				break;
 			case 3:
-				
-				System.out.println();
+				//mostrar compras
+				mostrarCompras(cliente.getCompras(), cliente);
 				break;
 			case 4:
 				//realizar queja
@@ -79,6 +67,24 @@ public class main {
 				break;
 			}
 		} while (opcion != 5);
+	}
+
+
+
+
+	private static void comprar(Scanner sc, Random r, List<Tienda> tiendas, Cliente cliente) {
+		Tienda tienda = pedirTienda(tiendas, sc);		
+
+		Producto producto = null;
+		List<Producto> productos = tienda.getProducto();
+		int nRandom = r.nextInt(1, productos.size() + 1);
+		for (Producto prod : productos) {
+			if (prod.getId() == nRandom) {
+				producto = prod;
+			}
+		}
+		cliente.comprarProducto(tienda, producto);
+		tienda.venderProducto(producto);
 	}
 
 
