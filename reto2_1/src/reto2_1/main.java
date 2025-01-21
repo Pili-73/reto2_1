@@ -67,6 +67,7 @@ public class main {
 				break;
 			case 4:
 				//realizar queja
+				funcionesP.realizarQueja(tiendas, empleados);
 				break;
 			case 5:
 				break;
