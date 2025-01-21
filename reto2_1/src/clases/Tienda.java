@@ -1,15 +1,21 @@
 package clases;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class Tienda {
+
 	private int id;
 	private String nombre;
 	private Empleado gerente;
 	private List<Producto> producto;
+	
 	public int getId() {
 		return id;
+	}
+	public Tienda() {
+		this.producto = new ArrayList<Producto>();
 	}
 	
 	public Tienda(int id, String nombre, Empleado gerente, List<Producto> producto) {
@@ -17,7 +23,7 @@ public class Tienda {
 		this.id = id;
 		this.nombre = nombre;
 		this.gerente = gerente;
-		this.producto = producto;
+		this.producto = new ArrayList<Producto>();
 	}
 
 	public void setId(int id) {
@@ -51,13 +57,20 @@ public class Tienda {
 			
 		}
 	}
+	
 	public void anadirProducto(Producto prod) {
 		producto.add(prod);
 	}
 
 	@Override
 	public String toString() {
-		return "Tienda [id=" + id + ", nombre=" + nombre + ", gerente=" + gerente + ", producto=" + producto + "]";
+		int tamano;
+		if (producto == null) {
+			tamano = 0;
+		} else {
+			tamano = producto.size();
+		}
+		return id + " - " + nombre + " " + gerente + " " + tamano;
 	}
-	
+
 }
