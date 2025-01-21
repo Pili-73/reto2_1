@@ -57,6 +57,7 @@ public class Tienda {
 			
 		}
 	}
+	
 	public void anadirProducto(Producto prod) {
 		producto.add(prod);
 	}
