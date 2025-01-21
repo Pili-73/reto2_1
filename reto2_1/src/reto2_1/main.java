@@ -3,10 +3,7 @@ package reto2_1;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-<<<<<<< HEAD
 import java.util.Iterator;
-=======
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -68,20 +65,12 @@ public class main {
 				tienda.venderProducto(producto);				//HACE COSAS RARAS***************
 				break;
 			case 3:
-<<<<<<< HEAD
 				
 				System.out.println();
-=======
-				//mostrar compras
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
 				break;
 			case 4:
-<<<<<<< HEAD
-				
-=======
 				//realizar queja
 				funcionesP.realizarQueja(tiendas, empleados);
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
 				break;
 			case 5:
 				break;
@@ -170,7 +159,6 @@ public class main {
 		}
 		return null;
 	}
-<<<<<<< HEAD
 	
 	public static void mostrarCompras(Map<Tienda, List<Producto>> compras, Cliente cliente){
 		Tienda clave;
@@ -184,7 +172,5 @@ public class main {
 		cliente.gastoTotal();
 	
 	}
-=======
->>>>>>> branch 'main' of https://github.com/Pili-73/reto2_1.git
 
 }
