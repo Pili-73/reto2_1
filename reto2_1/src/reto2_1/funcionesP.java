@@ -1,3 +1,5 @@
+package reto2_1;
+
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -15,17 +17,14 @@ public class funcionesP {
 		
 		Tienda tienda = pedirTienda(tiendas, sc);
 		int id_gerente = 0;
-		Empleado nuevo;
-		do {
-			id_gerente = r.nextInt(1,21);
-			for (Empleado empleado : empleados) {
-				if (empleado.getId() == id_gerente) {
-					nuevo = empleado;
-					empleado.setCargo("gerente");
-					break;
-				}
+		Empleado nuevo = null;
+		id_gerente = r.nextInt(1,21);
+		for (Empleado empleado : empleados) {
+			if (empleado.getId() == id_gerente) {
+				nuevo = empleado;
+				empleado.setCargo("gerente");
 			}
-		} while (true);
+		}
 		
 		tienda.setGerente(nuevo);
 	}
