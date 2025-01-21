@@ -1,15 +1,14 @@
+
 package clases;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import java.util.Iterator;
-
 import java.util.List;
 import java.util.Map;
 
 public class Cliente {
-	
+
 	private int id;
 	private String nombre;
 	private Map<Tienda, List<Producto>> compras;
@@ -30,7 +29,6 @@ public class Cliente {
 	public int getId() {
 		return id;
 	}
-	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -46,35 +44,35 @@ public class Cliente {
 	public void setCompras(Map<Tienda, List<Producto>> compras) {
 		this.compras = compras;
 	}
-
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nombre=" + nombre + "]";
 	}
 
 	public void comprarProducto(Tienda tienda, Producto producto) {
-		 compras.put(tienda, producto);
+		List<Producto> lista;
+		if (tienda.getProducto() == null) {
+			lista = new ArrayList<Producto>();
+		} else {
+			lista = tienda.getProducto(); 
+		}
+		lista.add(producto);
+		compras.put(tienda, lista);
+		System.out.println(compras);
 	}
 	
 	public void gastoTotal() {
 		Tienda tienda;
-		Producto valor;
+		List<Producto> listaProd;
 		double suma = 0;
-		Iterator<Integer> claves = compras.keySet().iterator();
+		Iterator<Tienda> claves = compras.keySet().iterator();
 		while (claves.hasNext()) {
 			tienda = claves.next();
-			valor = compras.get(tienda);
-			suma += valor.precio;
+			listaProd = tienda.getProducto();
+			for (Producto producto : listaProd) {
+				suma += producto.getPrecio();
+			}
 
 		}
 	}
-	
-
 }
-
-
-/*Y por último tendremos a los clientes que compran los productos de las tiendas, de los que tenemos el nombre
-y lista de compras. La lista de compras será un HashMap donde la clave será la tienda y el valor una lista de
-productos que se compran en esa tienda. Tendrá un método de comprar producto, que recibirá la tienda y el
-producto a comprar. Y otro método de gasto total que devolverá el importe de todas las compras que haya
-realizado.*/
