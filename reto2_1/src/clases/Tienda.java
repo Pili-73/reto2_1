@@ -1,5 +1,6 @@
 package clases;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,13 +14,16 @@ public class Tienda {
 	public int getId() {
 		return id;
 	}
+	public Tienda() {
+		this.producto = new ArrayList<Producto>();
+	}
 	
 	public Tienda(int id, String nombre, Empleado gerente, List<Producto> producto) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.gerente = gerente;
-		this.producto = producto;
+		this.producto = new ArrayList<Producto>();
 	}
 
 	public void setId(int id) {
